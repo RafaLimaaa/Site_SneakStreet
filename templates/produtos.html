@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produtos • Loja Sneakers</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo">👟</span>
+      <a href="{{ url_for('index') }}">Loja Sneakers</a>
+    </div>
+    <nav class="nav">
+      <a href="{{ url_for('adicionar') }}">Adicionar</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title">Produtos</h2>
+
+    {% if produtos %}
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Nome</th><th>Preço (R$)</th><th>Estoque</th><th style="width:110px">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for p in produtos %}
+          <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.nome }}</td>
+            <td>{{ '%.2f'|format(p.preco) }}</td>
+            <td>{{ p.estoque }}</td>
+            <td>
+              <form action="{{ url_for('deletar', produto_id=p.id) }}" method="post">
+                <button class="btn danger" type="submit" onclick="return confirm('Excluir {{p.nome}}?')">Excluir</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+      <div class="empty">
+        <p>Nenhum produto cadastrado ainda.</p>
+        <a class="btn" href="{{ url_for('adicionar') }}">Adicionar primeiro produto</a>
+      </div>
+    {% endif %}
+  </main>
+</body>
+</html>

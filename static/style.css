@@ -1,0 +1,45 @@
+:root{
+  --bg:#f6f7fb; --card:#fff; --ink:#0f1724; --muted:#64748b;
+  --primary:#0b5fff; --danger:#e11d48; --line:#e7edf5;
+}
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:var(--ink);background:var(--bg)}
+
+.top{position:sticky;top:0;background:var(--card);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700}
+.brand .logo{font-size:20px}
+.brand a, .brand span{color:var(--ink);text-decoration:none}
+
+.nav{display:flex;gap:12px}
+.nav a{color:var(--primary);text-decoration:none;font-weight:600}
+
+.container{max-width:980px;margin:26px auto;padding:0 16px}
+.hero{background:linear-gradient(180deg,#fff,rgba(255,255,255,.7));border:1px solid var(--line);border-radius:14px;padding:28px}
+.hero h1{margin:0 0 6px;font-size:32px}
+.hero h1 span{color:var(--primary)}
+.hero p{color:var(--muted);margin:0 0 16px}
+.actions{display:flex;gap:10px}
+
+.page-title{margin:0 0 14px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 14px rgba(2,6,23,.04);padding:16px}
+
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:12px;border-bottom:1px solid var(--line);text-align:left}
+.table thead th{color:var(--muted);font-size:14px}
+
+.form .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--muted)}
+.form input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid transparent;background:var(--primary);color:#fff;text-decoration:none;cursor:pointer;font-weight:600}
+.btn:hover{filter:brightness(.98)}
+.btn.ghost{background:#fff;color:var(--primary);border-color:var(--primary)}
+.btn.danger{background:var(--danger);}
+
+.actions.right{justify-content:flex-end}
+
+.empty{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+@media (max-width:720px){
+  .form .grid{grid-template-columns:1fr}
+}

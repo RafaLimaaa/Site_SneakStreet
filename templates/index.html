@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SneakStreet</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo">👟</span>
+      <span>SneakStreet</span>
+    </div>
+    <nav class="nav">
+      <a href="{{ url_for('produtos') }}">Ver Produtos</a>
+      <a class="btn" href="{{ url_for('adicionar') }}">Adicionar Produto</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Bem-vindo à <span>SneakStreet !</span></h1>
+      <p>Do clássico ao exclusivo: encontre o tênis perfeito para cada passo.🚀</p>
+      <div class="actions">
+        <a class="btn" href="{{ url_for('produtos') }}">Ver Produtos</a>
+        <a class="btn ghost" href="{{ url_for('adicionar') }}">Adicionar Produto</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
