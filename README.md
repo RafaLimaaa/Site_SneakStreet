@@ -1,11 +1,11 @@
-# 👟 Loja de Tênis (Sneakers)
+# Loja de Tênis - SneakStreet
 
 Projeto acadêmico da disciplina de Desenvolvimento de Software – **Primeira Entrega**.  
 O objetivo é desenvolver uma loja online de tênis com funcionalidades de catálogo, carrinho, login, checkout e painel administrativo.
 
 ---
 
-## 🚀 Tecnologias
+##  Tecnologias
 - **Python** (Flask)
 - **HTML / CSS / JS** (templates e estáticos)
 - **MySQL** (integração futura)
